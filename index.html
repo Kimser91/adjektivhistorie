@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adjektivhistorie</title>
+  <style>
+
+    body {
+      user-select: none;
+      background-color: rgb(24, 24, 24);
+    }
+
+    .contentBox {
+      border: 5px solid rgb(78, 0, 0);
+      padding: 30px;
+      font-size: 25px;
+      font-weight: bold;
+      color: aliceblue;
+
+    }
+
+    button {
+      float: left;
+      margin: 10px;
+    }
+
+    button:hover {
+      opacity: 70%;
+    }
+
+    button:active {
+      opacity: 50%;
+    }
+
+
+    .startRow {
+    clear: left;
+    }
+
+    .choiceBoxes {
+      font-size: 20px;
+      font-weight: bolder;
+      background-color:  rgb(45, 218, 74) ;
+      border: 5px solid rgb(184, 40, 40);
+      border-radius: 25%;
+      padding: 10px;
+      width: 170px;
+      height: 50px;
+      text-align:center;
+      
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="contentBox" id="makeMyStory">
+
+  </div>
+
+  <button id="" class="startRow choiceBoxes" onclick="chooseFirstWord(this)">Kind</button>
+  <button id="" class="choiceBoxes" onclick="chooseFirstWord(this)">Blue</button>
+  <button id="" class="choiceBoxes" onclick="chooseFirstWord(this)">Pink</button>
+  <button id="" class="startRow choiceBoxes" onclick="chooseSecondWord(this)">Game</button>
+  <button id="" class="choiceBoxes" onclick="chooseSecondWord(this)">Dog</button>
+  <button id="" class="choiceBoxes" onclick="chooseSecondWord(this)">Fish</button>
+  <button id="" class="startRow choiceBoxes" onclick="chooseThirdWord(this)">Tossed</button>
+  <button id="" class="choiceBoxes" onclick="chooseThirdWord(this)">Dotted</button>
+  <button id="" class="choiceBoxes" onclick="chooseThirdWord(this)">Stapled</button>
+  <button id="" class="startRow choiceBoxes" onclick="chooseFourthWord(this)">Ground</button>
+  <button id="" class="choiceBoxes" onclick="chooseFourthWord(this)">Ocean</button>
+  <button id="" class="choiceBoxes" onclick="chooseFourthWord(this)">Tarmack</button>
+  
+  
+  
+  <button style="background-color: brown;" id="" class="startRow" onclick="resetButton()">Reset</button>
+  
+  <script>
+
+    const output = document.getElementById("makeMyStory");
+    let firstWord = "___";
+    let secondWord ="___";
+    let thirdWord = "___";
+    let fourthWord = "___";
+    thisMakeMyStory();
+
+    function thisMakeMyStory(){
+
+      output.innerHTML = `
+      At a point in time, Ther was a ${firstWord} man who played a ${secondWord} </br>
+      called CS but after the last update he ${thirdWord} 
+      the pc out the window straight at the ${fourthWord}`;
+    }
+
+    function chooseFirstWord (choice) {
+      firstWord = choice.innerHTML;
+      thisMakeMyStory();
+    }
+
+    function chooseSecondWord(choice) {
+      secondWord = choice.innerHTML;
+      thisMakeMyStory();
+    }
+
+    function chooseThirdWord(choice) {
+      thirdWord = choice.innerHTML;
+      thisMakeMyStory();
+    }
+
+    function chooseFourthWord (choice) {
+      fourthWord = choice.innerHTML;
+      thisMakeMyStory();
+    }
+
+    function resetButton(choice) {
+      location.reload();
+    }
+
+  </script>
+
+</body>
+</html>
